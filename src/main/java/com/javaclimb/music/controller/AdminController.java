@@ -21,7 +21,7 @@ public class AdminController {
     //登录
     @PostMapping("/admin/login/status")
     //@RequestMapping(value = "/admin/login/status",method = RequestMethod.POST)
-    public Msg login(Admin admin) {
+    public Msg login(@RequestBody Admin admin) {
         try{
             Admin userResult = adminMapper.select(admin.getName());
             if(userResult==null){

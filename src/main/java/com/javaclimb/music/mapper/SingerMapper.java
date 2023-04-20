@@ -1,6 +1,5 @@
 package com.javaclimb.music.mapper;
 
-import com.javaclimb.music.domain.Admin;
 import com.javaclimb.music.domain.Singer;
 import org.apache.ibatis.annotations.*;
 
@@ -26,10 +25,10 @@ public interface SingerMapper {
 
     //按歌手名查询
     @Select("select * from singer where name=#{name}")
-    Admin select_name(@Param("name") String name);
+    Singer select_name(@Param("name") String name);
     //按性别查询
     @Select("selete * from singer where sex=#{sex}")
-    Admin selete_sex(@Param("sex") Byte sex);
+    Singer selete_sex(@Param("sex") Byte sex);
     //查询所有歌手
     @Select("selete * from singer")
     List<Singer> select_all();
